@@ -1,0 +1,88 @@
+$equalColor: #EA5E5D;
+$backgroundColor: #565656;
+$displayColor: #D0E5AA;
+$opColor: #41A2C4;
+$digitalFont: 'Orbitron', sans-serif;
+
+@mixin centerDisplay() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  @include centerDisplay();
+}
+
+.container-fluid, .wrapper {
+  background-color: $backgroundColor;
+  height: inherit;
+  min-width: 100%;
+}
+
+.row {
+  margin: 65px 20px;
+
+  .textArea {
+    @include centerDisplay();
+    justify-content: flex-end;
+    font-size: 100px;
+    font-family: 'PT Mono', monospace;
+    height: 280px;
+    background-color: $displayColor;
+  }
+  .buttons {
+    @include centerDisplay();
+    font-size: 100px;
+    background-color: grey;
+    height: 200px;
+    margin-right: 35px;
+    padding: 0;
+    box-shadow: 7px 7px 10px 0;
+  }
+  .buttons:active {
+    box-shadow: 3px 3px 10px 0 inset;
+  }
+  .last {
+    margin-right: 0;
+    background-color: $opColor;
+  }
+  .equal {
+    background-color: $equalColor;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container-fluid {
+    @include centerDisplay();
+    background-color: #FFFFFF;
+    .calculator {
+      border-left: 10px solid #343434;
+      border-bottom: 7px solid #343434;
+      background-color: $backgroundColor;
+      width: 375px;
+      box-shadow: -3px 3px 5px 0;
+    }
+  }
+  .row {
+    margin: 10px;
+    .textArea {
+      margin: 10px;
+      height: 120px;
+      font-size: 50px;
+    }
+    .buttons {
+      font-size: 40px;
+      height: 70px;
+      margin: 10px;
+      box-shadow: 1px 1px 10px 0;
+
+    }
+  }
+}
